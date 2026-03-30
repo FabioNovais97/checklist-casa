@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Novo Lar | Checklist</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Lista de Enxoval</h1>
+            <p>Planejamento para o nosso casamento 2026</p>
+        </header>
+
+        <section class="add-item">
+            <input type="text" id="itemInput" placeholder="O que precisamos comprar?">
+            <select id="categoryInput">
+                <option value="Cozinha">Cozinha</option>
+                <option value="Sala">Sala</option>
+                <option value="Quarto">Quarto</option>
+                <option value="Banheiro">Banheiro</option>
+            </select>
+            <button onclick="addItem()">Adicionar</button>
+        </section>
+
+        <section class="list-container">
+    <div class="filter-group" style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+        <label for="filterCategory">🔍 Filtrar por:</label>
+        <select id="filterCategory" onchange="carregarLista()">
+            <option value="Todos">Todos</option>
+            <option value="Cozinha">Cozinha</option>
+            <option value="Sala">Sala</option>
+            <option value="Quarto">Quarto</option>
+            <option value="Banheiro">Banheiro</option>
+        </select>
+    </div>
+    <ul id="shoppingList">
+        </ul>
+</section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
