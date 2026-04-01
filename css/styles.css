@@ -17,13 +17,13 @@ body {
 /* --- 2. O Container Principal (Cartão da Lista) --- */
 .container {
     background-color: #ffffff;
-    width: 100%;
-    max-width: 500px; /* Largura máxima para não ficar gigante em telas grandes */
-    margin-top: 40px;
-    padding: 30px;
-    border-radius: 15px; /* Bordas bem arredondadas */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para dar profundidade */
-    border: 1px solid #e1e8ed; /* Borda externa bem fina */
+    width: 92%; /* Deixa uma margemzinha nas laterais no celular */
+    max-width: 500px; /* No PC ele não fica gigante */
+    margin: 20px auto; /* O 'auto' centraliza o quadrado na tela */
+    padding: 20px; /* Diminuí um pouco o preenchimento para ganhar espaço */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #e1e8ed;
 }
 
 /* --- 3. Cabeçalho (Título e Subtítulo) --- */
@@ -46,10 +46,9 @@ header p {
 /* --- 4. Área de Adicionar Item (Formulário) --- */
 .add-item {
     display: flex;
-    gap: 10px; /* Espaço entre os elementos */
+    flex-wrap: wrap; /* Isso faz o botão pular para baixo se não couber */
+    gap: 10px;
     margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #f4f7f6; /* Linha divisória inferior */
 }
 
 input[type="text"], select {
@@ -163,4 +162,48 @@ input[type="checkbox"]:checked + .item-name {
 .actions button {
     font-size: 0.8rem;
     padding: 5px 12px;
+}
+
+/* --- Estilo dos Itens da Lista (Cards) --- */
+.item-card {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; /* Espalha os itens no card */
+    flex-wrap: wrap; /* Faz o conteúdo pular linha no celular */
+    background-color: #ffffff;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #f0f3f5;
+    border-left: 5px solid #2ecc71;
+    gap: 10px;
+}
+
+.item-name {
+    font-size: 1rem;
+    color: #34495e;
+    flex: 1 1 200px; /* Garante que o nome tenha espaço */
+}
+
+.category-tag {
+    font-size: 0.75rem;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Ajuste fino para telas de celular */
+@media (max-width: 480px) {
+    .item-card {
+        flex-direction: column; /* Empilha tudo no celular */
+        align-items: flex-start;
+    }
+    
+    .price-link {
+        margin-top: 5px;
+        font-size: 0.85rem;
+    }
 }
